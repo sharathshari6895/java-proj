@@ -1,0 +1,36 @@
+<button
+  (click)="addEmployee()"
+  class="btn btn-warning"
+  routerLink="./selector-name"
+>
+  Insert
+</button>
+
+<table class="table table-bordered table-striped">
+  <tr>
+    <th>EmployeeId</th>
+    <th>EmployeeName</th>
+    <th>EmployeeAGE</th>
+  </tr>
+  <tr *ngFor="let item of employees">
+    <td>{{ item.employeeId }}</td>
+    <td>{{ item.employeeName }}</td>
+    <td>{{ item.employeeAge }}</td>
+    <td>
+      <button
+        type="button"
+        class="btn btn-danger"
+        (click)="deleteEmployee(this.item.employeeId)"
+      >
+        Delete
+      </button>
+      <button
+        type="button"
+        class="btn btn-success"
+        [routerLink]="['/edit', this.item.employeeId]"
+      >
+        Edit
+      </button>
+    </td>
+  </tr>
+</table>

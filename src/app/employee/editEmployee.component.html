@@ -1,0 +1,29 @@
+<form #form="ngForm" (ngSubmit)="editInsert(form)">
+  <div class="form-group">
+    <label for="employeeId">Id</label>
+    <input
+      id="employeeId"
+      name="employeeId"
+      readonly="true"
+      [(ngModel)]="employee.employeeId"
+    />
+  </div>
+  <div class="form-group">
+    <label for="employeeName">Student Name</label>
+    <input
+      id="employeeName"
+      name="employeeName"
+      [(ngModel)]="employee.employeeName"
+    />
+  </div>
+  <div class="form-group">
+    <label for="employeeAge">Student Age</label>
+    <input
+      id="employeeId"
+      name="employeeAge"
+      [(ngModel)]="employee.employeeAge"
+    />
+  </div>
+
+  <button type="submit">submit</button>
+</form>
